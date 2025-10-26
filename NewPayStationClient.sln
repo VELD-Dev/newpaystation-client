@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36414.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoPayStationClient", "NoPayStationClient\NoPayStationClient.csproj", "{3D1C8118-5468-4B4C-AF04-2B05A3F9A920}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewPayStation.Client", "NoPayStationClient\NewPayStation.Client.csproj", "{3D1C8118-5468-4B4C-AF04-2B05A3F9A920}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Éléments de solution", "Éléments de solution", "{9C8CB701-102D-CF49-A3E0-89AC09D42C2C}"
 	ProjectSection(SolutionItems) = preProject
