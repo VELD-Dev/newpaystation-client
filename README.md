@@ -25,7 +25,7 @@ This was originally a project made for fun to use `Spectre.Console` C# library, 
 ## Installation
 ### Prerequisites
 - [.NET 9.0 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/9.0) or later.
-- > [!DANGER]  
+- > [!CAUTION]  
   > A TSV file from [**NoPayStation**](https://nopaystation.com/). Make sure you download them **ONLY** from the official [**NoPayStation site**](https://nopaystation.com/). If someone provides you a TSV file from another source, it may contain malicious links or bad files.
 
 ### Windows
