@@ -1,10 +1,10 @@
-using NoPayStationClient.Models;
-using NoPayStationClient.Services;
-using NoPayStationClient.UI;
-using NoPayStationClient.UI.Pages;
+using NewPayStation.Client.Models;
+using NewPayStation.Client.Services;
+using NewPayStation.Client.UI;
+using NewPayStation.Client.UI.Pages;
 using Spectre.Console;
 
-namespace NoPayStationClient;
+namespace NewPayStation.Client;
 
 public class Application
 {
@@ -75,7 +75,7 @@ public class Application
 
     private void ShowMainMenu()
     {
-        var rule = new Rule("[cyan]NoPayStation Client[/]")
+        var rule = new Rule("[cyan]NewPayStation Client[/]")
         {
             Justification = Justify.Left
         };

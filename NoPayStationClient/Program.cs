@@ -1,69 +1,68 @@
 ﻿using Spectre.Console;
 
-namespace NoPayStationClient
+namespace NewPayStation.Client;
+
+internal class Program
 {
-    internal class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
+        try
         {
-            try
-            {
-                // Find TSV file
-                var tsvPath = FindTsvFile();
+            // Find TSV file
+            var tsvPath = FindTsvFile();
 
-                if (tsvPath == null)
-                {
-                    AnsiConsole.MarkupLine("[red]Error: PS3_GAMES.tsv not found![/]");
-                    AnsiConsole.MarkupLine("Please place the PS3_GAMES.tsv file in:");
-                    AnsiConsole.MarkupLine($"  - Current directory: {Directory.GetCurrentDirectory()}");
-                    AnsiConsole.MarkupLine($"  - Or parent directory");
-                    Console.ReadKey();
-                    return;
-                }
-
-                var app = new Application(tsvPath);
-                app.Run();
-            }
-            catch (Exception ex)
+            if (tsvPath == null)
             {
-                AnsiConsole.MarkupLine($"[red]Fatal error: {ex.Message}[/]");
-                AnsiConsole.WriteException(ex);
+                AnsiConsole.MarkupLine("[red]Error: PS3_GAMES.tsv not found![/]");
+                AnsiConsole.MarkupLine("Please place the PS3_GAMES.tsv file in:");
+                AnsiConsole.MarkupLine($"  - Current directory: {Directory.GetCurrentDirectory()}");
+                AnsiConsole.MarkupLine($"  - Or parent directory");
                 Console.ReadKey();
+                return;
             }
-        }
 
-        static string? FindTsvFile()
+            var app = new Application(tsvPath);
+            app.Run();
+        }
+        catch (Exception ex)
         {
-            // Check current directory
-            var currentDir = Directory.GetCurrentDirectory();
-            var tsvPath = Path.Combine(currentDir, "PS3_GAMES.tsv");
-            if (File.Exists(tsvPath)) return tsvPath;
-
-            // Check parent directory
-            var parentDir = Directory.GetParent(currentDir)?.FullName;
-            if (parentDir != null)
-            {
-                tsvPath = Path.Combine(parentDir, "PS3_GAMES.tsv");
-                if (File.Exists(tsvPath)) return tsvPath;
-            }
-
-            // Check two levels up (for bin/Debug/net9.0 scenario)
-            var grandParentDir = Directory.GetParent(parentDir ?? "")?.FullName;
-            if (grandParentDir != null)
-            {
-                tsvPath = Path.Combine(grandParentDir, "PS3_GAMES.tsv");
-                if (File.Exists(tsvPath)) return tsvPath;
-            }
-
-            // Check three levels up (for bin/Debug/net9.0 scenario in project folder)
-            var greatGrandParentDir = Directory.GetParent(grandParentDir ?? "")?.FullName;
-            if (greatGrandParentDir != null)
-            {
-                tsvPath = Path.Combine(greatGrandParentDir, "PS3_GAMES.tsv");
-                if (File.Exists(tsvPath)) return tsvPath;
-            }
-
-            return null;
+            AnsiConsole.MarkupLine($"[red]Fatal error: {ex.Message}[/]");
+            AnsiConsole.WriteException(ex);
+            Console.ReadKey();
         }
+    }
+
+    static string? FindTsvFile()
+    {
+        // Check current directory
+        var currentDir = Directory.GetCurrentDirectory();
+        var tsvPath = Path.Combine(currentDir, "PS3_GAMES.tsv");
+        if (File.Exists(tsvPath)) return tsvPath;
+
+        // Check parent directory
+        var parentDir = Directory.GetParent(currentDir)?.FullName;
+        if (parentDir != null)
+        {
+            tsvPath = Path.Combine(parentDir, "PS3_GAMES.tsv");
+            if (File.Exists(tsvPath)) return tsvPath;
+        }
+
+        // Check two levels up (for bin/Debug/net9.0 scenario)
+        var grandParentDir = Directory.GetParent(parentDir ?? "")?.FullName;
+        if (grandParentDir != null)
+        {
+            tsvPath = Path.Combine(grandParentDir, "PS3_GAMES.tsv");
+            if (File.Exists(tsvPath)) return tsvPath;
+        }
+
+        // Check three levels up (for bin/Debug/net9.0 scenario in project folder)
+        var greatGrandParentDir = Directory.GetParent(grandParentDir ?? "")?.FullName;
+        if (greatGrandParentDir != null)
+        {
+            tsvPath = Path.Combine(greatGrandParentDir, "PS3_GAMES.tsv");
+            if (File.Exists(tsvPath)) return tsvPath;
+        }
+
+        return null;
     }
 }

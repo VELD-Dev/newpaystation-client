@@ -1,6 +1,6 @@
 using Spectre.Console.Rendering;
 
-namespace NoPayStationClient.UI.Pages
+namespace NewPayStation.Client.UI.Pages
 {
     public interface IPage
     {

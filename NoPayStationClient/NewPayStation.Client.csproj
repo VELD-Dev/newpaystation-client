@@ -6,7 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    <StartupObject>NoPayStationClient.Program</StartupObject>
+    <StartupObject>NewPayStation.Client.Program</StartupObject>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <Title>NewPayStation</Title>
     <Authors>VELD-Dev</Authors>
@@ -15,6 +15,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/VELD-Dev/newpaystation-client.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <RuntimeIdentifiers>win-x64;win-arm64;linux-x64;linux-arm64</RuntimeIdentifiers>
     <NeutralLanguage>en</NeutralLanguage>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
@@ -36,5 +37,13 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1" />
     <PackageReference Include="Spectre.Console" Version="0.52.0" />
   </ItemGroup>
+
+  <Target Name="MultiArchPublish">
+    <ItemGroup>
+      <_rids Include="$(RuntimeIdentifiers)" />
+      <_InnerBuild Include="$(MSBuildProjectFullPath)" AdditionalProperties="RuntimeIdentifier=%(_rids.Identity)" />
+    </ItemGroup>
+    <MSBuild Projects="@(_InnerBuild)" Targets="Publish" BuildInParallel="true" Properties="_IsPublishing=true" />
+  </Target>
 
 </Project>
