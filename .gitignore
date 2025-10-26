@@ -1,0 +1,28 @@
+# C# binaries and built files
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+*.user
+*.vspscc
+*.suo
+*.ncb
+*.sln.docstates
+
+# Visual Studio and Visual Studio Code settings
+.vs/
+.vscode/
+*.code-workspace
+*.csproj.user
+*.sln.ide
+*.sln.dotsettings
+*.sln.dotsettings.user
+*.sln.cache
+*.sln.vspscc
+*.sln.suo
+
+# Other
+.claude/

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "NoPayStationClient": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
