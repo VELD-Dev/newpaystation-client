@@ -25,8 +25,8 @@ This was originally a project made for fun to use `Spectre.Console` C# library, 
 ## Installation
 ### Prerequisites
 - [.NET 9.0 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/9.0) or later.
-- > [!CAUTION]  
-  > A TSV file from [**NoPayStation**](https://nopaystation.com/). Make sure you download them **ONLY** from the official [**NoPayStation site**](https://nopaystation.com/). If someone provides you a TSV file from another source, it may contain malicious links or bad files.
+> [!CAUTION]  
+> A TSV file from [**NoPayStation**](https://nopaystation.com/). Make sure you download them **ONLY** from the official [**NoPayStation site**](https://nopaystation.com/). If someone provides you a TSV file from another source, it may contain malicious links or bad files.
 
 ### Windows
 1. Download the latest release from the [Releases](https://github.com/VELD-Dev/newpaystation-client/releases/) page.
