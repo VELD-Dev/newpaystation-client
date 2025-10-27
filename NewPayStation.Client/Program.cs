@@ -40,30 +40,6 @@ internal class Program
         var tsvPath = Path.Combine(currentDir, "PS3_GAMES.tsv");
         if (File.Exists(tsvPath)) return tsvPath;
 
-        // Check parent directory
-        var parentDir = Directory.GetParent(currentDir)?.FullName;
-        if (parentDir != null)
-        {
-            tsvPath = Path.Combine(parentDir, "PS3_GAMES.tsv");
-            if (File.Exists(tsvPath)) return tsvPath;
-        }
-
-        // Check two levels up (for bin/Debug/net9.0 scenario)
-        var grandParentDir = Directory.GetParent(parentDir ?? "")?.FullName;
-        if (grandParentDir != null)
-        {
-            tsvPath = Path.Combine(grandParentDir, "PS3_GAMES.tsv");
-            if (File.Exists(tsvPath)) return tsvPath;
-        }
-
-        // Check three levels up (for bin/Debug/net9.0 scenario in project folder)
-        var greatGrandParentDir = Directory.GetParent(grandParentDir ?? "")?.FullName;
-        if (greatGrandParentDir != null)
-        {
-            tsvPath = Path.Combine(greatGrandParentDir, "PS3_GAMES.tsv");
-            if (File.Exists(tsvPath)) return tsvPath;
-        }
-
         return null;
     }
 }

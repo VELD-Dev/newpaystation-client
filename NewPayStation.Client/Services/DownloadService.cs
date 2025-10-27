@@ -124,7 +124,7 @@ public class DownloadService
 
     public void CleanupPartialFile(string outputPath, string fileName)
     {
-        var tempPath = Path.Combine(outputPath, fileName + ".partial");
+        var tempPath = Path.Combine(outputPath, fileName + ".download");
         if (File.Exists(tempPath))
         {
             File.Delete(tempPath);
