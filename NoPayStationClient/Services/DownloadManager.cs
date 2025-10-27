@@ -140,7 +140,7 @@ public class DownloadManager
             };
 
             _downloads[rapTask.Id] = rapTask;
-            _ = DownloadRapAsync(package.Rap, outputPath, package.TitleId, rapTask);
+            _ = DownloadRapAsync(package.Rap, outputPath, package.ContentId, rapTask);
         }
 
         // Download PKG if available
