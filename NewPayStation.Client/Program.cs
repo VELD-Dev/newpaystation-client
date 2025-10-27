@@ -1,4 +1,5 @@
 ﻿using Spectre.Console;
+using System.Reflection;
 
 namespace NewPayStation.Client;
 
